@@ -1,0 +1,57 @@
+{
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist",
+    "withGlobalTauri": false
+  },
+  "package": {
+    "productName": "demo",
+    "version": "0.0.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": true,
+      "http": {
+        "scope": [
+          "http://**",
+          "https://**"
+        ]
+      },
+      "shell": {
+        "all": false,
+        "open": true
+      }
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "com.tauri.build",
+      "icon": [
+        "icons/邮轮.png",
+        "icons/邮轮.ico"
+      ],
+      "windows": {
+        "wix": {
+          "language": [
+            "en-US",
+            "zh-CN"
+          ]
+        }
+      }
+    },
+    "security": {
+      "csp": null
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "resizable": true,
+        "title": "demo",
+        "width": 500,
+        "height": 300
+      }
+    ]
+  }
+}
