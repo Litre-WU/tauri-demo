@@ -4,21 +4,31 @@
     "beforeBuildCommand": "npm run build",
     "devPath": "http://localhost:1420",
     "distDir": "../dist",
-    "withGlobalTauri": false
+    "withGlobalTauri": true
   },
   "package": {
     "productName": "demo",
     "version": "0.0.1"
   },
   "tauri": {
+    "embeddedServer": {
+      "webview": {
+        "webSecurity": true,
+        "allowCors": false
+      }
+    },
     "allowlist": {
-      "all": true,
-      "http": {
-        "scope": [
-          "http://**",
-          "https://**"
-        ]
+      "app": {
+        "all": true,
+        "show": true,
+        "hide": true
       },
+      "all": true,
+      "request": true,
+      "scope": [
+        "http://*",
+        "https://*"
+      ],
       "shell": {
         "all": false,
         "open": true
@@ -33,15 +43,28 @@
         "icons/邮轮.ico"
       ],
       "windows": {
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": "",
+        "webviewInstallMode": {
+          "type": "skip"
+        },
         "wix": {
           "language": [
-            "en-US",
             "zh-CN"
+          ],
+          "fragmentPaths": [
+            "registry.wxs"
+          ],
+          "componentRefs": [
+            "Edge",
+            "WebView2"
           ]
         }
       }
     },
     "security": {
+      "devCsp": null,
       "csp": null
     },
     "windows": [

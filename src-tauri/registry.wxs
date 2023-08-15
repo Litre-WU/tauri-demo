@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <!-- these registry entries should be installed
+         to the target user's machine -->
+    <DirectoryRef Id="TARGETDIR">
+      <!-- groups together the registry entries to be installed -->
+      <!-- Note the unique `Id` we provide here -->
+      <Component Id="Edge" Guid="*">
+        <RegistryKey
+          Root="HKLM"
+          Key="Software\Policies\Microsoft\Edge"
+          Action="createAndRemoveOnUninstall"
+        >
+          <RegistryValue
+            Type="integer"
+            Name="RendererCodeIntegrityEnabled"
+            Value="0"
+            KeyPath="yes"
+          />
+          <RegistryValue Type="string" Value="Default Value" />
+        </RegistryKey>
+      </Component>
+      <Component Id="WebView2" Guid="*">
+        <RegistryKey
+          Root="HKLM"
+          Key="SOFTWARE\Policies\Microsoft\Edge\WebView2"
+          Action="createAndRemoveOnUninstall"
+        >
+          <RegistryValue
+            Type="integer"
+            Name="RendererCodeIntegrityEnabled"
+            Value="0"
+            KeyPath="yes"
+          />
+          <RegistryValue Type="string" Value="Default Value" />
+        </RegistryKey>
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+</Wix>

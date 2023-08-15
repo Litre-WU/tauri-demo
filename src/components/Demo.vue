@@ -2,15 +2,18 @@
 
 // 下拉追加数据
 async function fetchData(page) {
-  fetch('http://10.2.106.77:8000/test', {
-    'method': 'POST',
-    body: JSON.stringify({page: page}),
-    headers: {'Content-Type': 'application/json'}
+  fetch("https://merry-jawfish-43540.kv.vercel-storage.com", {
+    method: 'POST',
+    body: '["GET", "testData"]',
+    headers: {
+      Authorization: 'Bearer AaoUASQgYTRhNzYxOGMtZGQzYS00M2Y4LWE5MDAtOGVjNTFmMTYwNDljNDg5ZmVhNmMyNDQ5NDEwZmIzYjU1YmEyOTIxZGQ5NDE='
+    },
   })
       .then(response => response.json())
       .then(data => {
+        console.log(eval(data.result));
         const container = document.getElementById('app');
-        data.forEach(item => {
+        eval(data.result).forEach(item => {
           const divElement = document.createElement('div');
           const imgElement = document.createElement('img');
           const paragraphElement = document.createElement('p');
@@ -40,12 +43,12 @@ window.addEventListener('scroll', () => {
 </script>
 
 <template>
-  <div class="content"><img src="https://www.litre.tk/image/header/home.jpg" alt="测试">
-    <p>测试文本</p>
-  </div>
-  <div class="content"><img src="https://www.litre.tk/image/header/home.jpg" alt="测试">
-    <p>测试文本</p>
-  </div>
+<!--  <div class="content"><img src="https://www.litre.tk/image/header/home.jpg" alt="测试">-->
+<!--    <p>测试文本</p>-->
+<!--  </div>-->
+<!--  <div class="content"><img src="https://www.litre.tk/image/header/home.jpg" alt="测试">-->
+<!--    <p>测试文本</p>-->
+<!--  </div>-->
 </template>
 
 <style scoped>
