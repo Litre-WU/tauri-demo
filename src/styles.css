@@ -119,9 +119,6 @@ button {
     50% {
         transform: translateX(-250px);
     }
-    /*70%{*/
-    /*    transform: translateX(0px);*/
-    /*}*/
     100% {
         transform: translateX(250px);
     }
@@ -136,6 +133,7 @@ button {
     text-align: center;
     vertical-align: middle;
     justify-content: space-around;
+    top: 10px;
     right: -250px;
     animation-name: alert;
     animation-duration: 3s;
@@ -211,8 +209,75 @@ footer input:hover {
 
 .content img {
     width: 50%;
+    margin: auto 0;
 }
 
-.content div {
-    margin: auto;
+.text {
+    width: 50%;
+    height: 50%;
+    box-sizing: border-box;
 }
+.text p {
+    margin: 5px 0px 5px 10px;
+    font-size: 12px;
+}
+
+.text h5 {
+    margin: 5px 0px 5px 10px;
+    font-size: 12px;
+}
+
+#tone {
+    position: absolute;
+    right: 20px;
+    bottom: 45px;
+    font-size: 12px;
+    display: flex;
+    justify-content: left;
+    height: 20px;
+    width: 150px;
+}
+
+
+#tone div {
+    border-radius: 3px;
+    color: coral;
+    margin: 0 5px;
+    text-align: center;
+    line-height: 20px;
+    width: 37px;
+    border: lightgrey solid 1px;
+}
+
+#tone div:hover {
+    background-color: lightcoral;
+    color: white;
+    border: white solid 1px;
+}
+
+.mplay {
+    position: absolute;
+    bottom: 15px;
+    right: 121px;
+    height: 20px;
+    font-size: 12px;
+    color: white;
+    text-decoration: none;
+}
+
+.mplay div {
+    width: 37px;
+    border-radius: 3px;
+    margin: 0 5px;
+    color: tomato;
+    text-align: center;
+    line-height: 20px;
+    border: lightgrey solid 1px;
+}
+
+.mplay div:hover {
+    background-color: lightcoral;
+    color: white;
+    border: white solid 1px;
+}
+

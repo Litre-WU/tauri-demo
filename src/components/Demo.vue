@@ -16,12 +16,23 @@ async function fetchData(page) {
         eval(data.result).forEach(item => {
           const divElement = document.createElement('div');
           const imgElement = document.createElement('img');
-          const paragraphElement = document.createElement('p');
+          const textElement = document.createElement('div');
+          const toneElement = document.createElement('div');
+          const h5Element = document.createElement('h5');
+          const phElement = document.createElement('p');
+
+
+          divElement.setAttribute('class', 'content');
+          textElement.setAttribute('class', 'text');
+          toneElement.setAttribute('id', 'tone');
           imgElement.src = item.img;
-          paragraphElement.textContent = item.text;
-          divElement.setAttribute('class', 'content')
-          divElement.appendChild(imgElement)
-          divElement.appendChild(paragraphElement);
+          h5Element.textContent = item.song+' - '+item.singer;
+          phElement.textContent = item.album;
+
+          textElement.appendChild(h5Element);
+          textElement.appendChild(phElement);
+          divElement.appendChild(imgElement);
+          divElement.appendChild(textElement);
           container.appendChild(divElement);
         });
       });
@@ -43,11 +54,21 @@ window.addEventListener('scroll', () => {
 </script>
 
 <template>
-<!--  <div class="content"><img src="https://www.litre.tk/image/header/home.jpg" alt="测试">-->
-<!--    <p>测试文本</p>-->
-<!--  </div>-->
-<!--  <div class="content"><img src="https://www.litre.tk/image/header/home.jpg" alt="测试">-->
-<!--    <p>测试文本</p>-->
+<!--  <div class="content">-->
+<!--    <img src="https://qpic.y.qq.com/music_cover/zQII3lJrGSNNoWObRlPoyng3yovJu21sRHSVvxDujsybVrrlTt9Nfw/300?n=1"-->
+<!--         alt="测试">-->
+<!--    <div class="text">-->
+<!--      <h5>数到五 - By2</h5>-->
+<!--      <p>数到五</p>-->
+<!--    </div>-->
+<!--    <div id="tone">-->
+<!--      <div>HQ</div>-->
+<!--      <div>SQ</div>-->
+<!--      <div>FLAC</div>-->
+<!--    </div>-->
+<!--    <a href="" class="mplay">-->
+<!--      <div>试听</div>-->
+<!--    </a>-->
 <!--  </div>-->
 </template>
 
