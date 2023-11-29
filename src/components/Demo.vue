@@ -1,5 +1,17 @@
 <script setup>
 
+// //通知
+// const alertElement = document.createElement("p");
+// alertElement.setAttribute("id", "alert");
+// alertElement.textContent = '测试通知！';
+// document.body.appendChild(alertElement);
+//
+// async function notice(msg) {
+//   document.body.removeChild(alertElement);
+//   alertElement.textContent = msg;
+//   document.body.appendChild(alertElement);
+// }
+
 // 下拉追加数据
 async function fetchData(page) {
   fetch("https://merry-jawfish-43540.kv.vercel-storage.com", {
@@ -49,6 +61,30 @@ window.addEventListener('scroll', () => {
     fetchData(page);
   }
 });
+
+
+// //创建websocket连接
+// const ws = new WebSocket("wss://10.2.107.96:8000/ws/123926586511422?token=abc")
+// //连接
+// ws.onopen = function () {
+//   notice("连接成功!");
+//   ws.send("Hi!")
+// }
+// //监听消息
+// ws.onmessage = function (msg) {
+//   console.log(msg.data);
+//   notice(msg.data);
+// }
+// // 连接失败
+// ws.onerror = function () {
+//   console.log("连接失败!");
+//   notice("连接失败!");
+// }
+// // 连接关闭
+// ws.onclose = function () {
+//   console.log("连接关闭!");
+//   notice("连接关闭!");
+// }
 
 
 </script>

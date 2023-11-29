@@ -124,6 +124,7 @@ button {
     }
 }
 
+
 #alert {
     height: 35px;
     width: 250px;
@@ -132,13 +133,15 @@ button {
     display: flex;
     text-align: center;
     vertical-align: middle;
-    justify-content: space-around;
+    line-height: 35px;
     top: 10px;
     right: -250px;
     animation-name: alert;
     animation-duration: 3s;
     animation-timing-function: ease-in-out;
     z-index: 9999;
+    color: white;
+    font-size: 15px;
 }
 
 #alert p {
