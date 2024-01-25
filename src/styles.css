@@ -219,6 +219,7 @@ footer input:hover {
     width: 50%;
     height: 50%;
     box-sizing: border-box;
+    color: black;
 }
 .text p {
     margin: 5px 0px 5px 10px;
